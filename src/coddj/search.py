@@ -13,7 +13,7 @@ def search(query):
     request = youtube.search().list(
         part='id,snippet',
         q=query,
-        maxResults=5,
+        maxResults=25,
         type='video'
     )
 

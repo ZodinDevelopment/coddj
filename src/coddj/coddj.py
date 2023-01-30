@@ -2,8 +2,8 @@ from __future__ import print_function, unicode_literals
 
 from PyInquirer import prompt
 import random
-from search import search
-from player import play_song
+from coddj.search import search
+from coddj.player import play_song
 from pyfiglet import Figlet
 
 
@@ -11,7 +11,7 @@ EXIT_TOGGLE = False
 queue = []
 
 def main():
-    
+
     questions = [
         {
             "type": "list",
@@ -50,8 +50,8 @@ def get_file_name():
   for line in data:
     queue.append(line)
   #return filename.get("filename")
-  
-  
+
+
 def shuffle_playlist():
   if len(queue) > 0:
     choice = random.choice(queue)
@@ -67,7 +67,7 @@ def query_mode():
       "type": "input",
       "name": "query",
       "message": "Search: ",
-    }  
+    }
   ]
   query = prompt(questions)
   return query.get("query")
